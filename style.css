@@ -1,9 +1,17 @@
-.board {
-    margin: 20px;
+body {
+    color: black;
 }
 
-table, tr, td {
-    border: 2px solid darkblue;
-    padding: 10px;
+th {
+    border: 2px solid black;
+    padding: 20px;
 }
 
+td {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.table {
+
+}

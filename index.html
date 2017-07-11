@@ -3,58 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>BINGO</title>
 </head>
 
 <body>
 
-<div class="board" align=>
-    <h1>BINGO</h1>
-    <table>
-        <tr>
-            <td id"cell0">hi</td>
-            <td id"cell5">hi</td>
-            <td id"cell10">hi</td>
-            <td id"cell14">hi</td>
-            <td id"cell19">hi</td>
+
+<h1>BINGO</h1>
+
+<div>
+    <table id="table">
+        <tr class="row">
+            <th class="cell">B</th>
+            <th class="cell">I</th>
+            <th class="cell">N</th>
+            <th class="cell">G</th>
+            <th class="cell">O</th>
         </tr>
-        <tr>
-            <td id"cell1">hi</td>
-            <td id"cell6">hi</td>
-            <td id"cell11">hi</td>
-            <td id"cell15">hi</td>
-            <td id"cell20">hi</td>
+        <tr class="row">
+            <td class="cell">a</td>
+            <td class="cell">a</td>
+            <td class="cell">a</td>
+            <td class="cell">a</td>
+            <td class="cell">a</td>
         </tr>
-        <tr>
-            <td id"cell2">hi</td>
-            <td id"cell7">hi</td>
-            <td id"cellfree">hi</td>
-            <td id"cell16">hi</td>
-            <td id"cell21">hi</td>
+        <tr class="row">
+            <td class="cell">b</td>
+            <td class="cell">b</td>
+            <td class="cell">b</td>
+            <td class="cell">b</td>
+            <td class="cell">b</td>
         </tr>
-        <tr>
-            <td id"cell3">hi</td>
-            <td id"cell8">hi</td>
-            <td id"cell12">hi</td>
-            <td id"cell17">hi</td>
-            <td id"cell22">hi</td>
+        <tr class="row">
+            <td class="cell">c</td>
+            <td class="cell">c</td>
+            <td class="cell">free</td>
+            <td class="cell">c</td>
+            <td class="cell">c</td>
         </tr>
-        <tr>
-            <td id"cell4">hi</td>
-            <td id"cell9">hi</td>
-            <td id"cell13">hi</td>
-            <td id"cell18">hi</td>
-            <td id"cell23">hi</td>
+        <tr class="row">
+            <td class="cell">d</td>
+            <td class="cell">d</td>
+            <td class="cell">d</td>
+            <td class="cell">d</td>
+            <td class="cell">d</td>
+        </tr>
+        <tr class="row">
+            <td class="cell">e</td>
+            <td class="cell">e</td>
+            <td class="cell">e</td>
+            <td class="cell">e</td>
+            <td class="cell">e</td>
         </tr>
     </table>
 </div>
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type="text/javascript" src="bingogame.js"></script>
 <script type="text/javascript" src="main.js"></script>
 
 </body>
