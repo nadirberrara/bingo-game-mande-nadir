@@ -2,12 +2,32 @@
 
 
 $('document').ready(function(){
+    var randomList = b._generateRandomList();
+    var i = 0;
 
     $('#commencer').click(function(){
         $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
+        for (var x = 0; x < 5; x++) {
+            for (var y= 0; y < 5; y++) {
+                if (y !== 2 || x !== 2) {
+                $('.player1 .cell-' + y + '-' + x).html(b.board[y][x]);}}}
+        for (var x = 0; x < 5; x++) {
+                if (y !== 2 || x !== 2) {
+            for (var y= 0; y < 5; y++) {
+                $('.player2 .cell-' + y + '-' + x).html(b.board2[y][x]);}}}
+        for (var x = 0; x < 10; x++) {
+            for (var y = 0; y < 10; y++) {
+                $('.theList .cell-' + y + '-' + x).html(randomList[i]);
+                i++;
+            }
+        }
     });
 
-});
+
+
+
+
+}); // fin du document ready
 
 
 
@@ -30,11 +50,9 @@ function BingoGame () {
         [null, null, null, null, null]
     ];
 
-    this.list = [];
-
     this._generateTiles();
     this._generateTiles2();
- //   this._generateList();
+    this._generateRandomList();
 
 }
 
@@ -86,42 +104,9 @@ BingoGame.prototype._generateTiles = function () {
 };
 
 
-BingoGame.prototype._getAvailablePosition = function () {
-    var positions = [];
-    _.forEach(this.board, function (row, y) {
-        _.forEach(row, function (tile, x) {
-            if (!tile) positions.push({ x: x, y: y });
-        })
-    });
-
-    if (!positions.length) return false;
-
-    return _.sample(positions);
-};
 
 
-BingoGame.prototype._renderBoard = function () {
-    var that = this;
-    $('.js-score').text(this.score);
-    $('.row').each(function(y, row) {
-        $(row).children().each(function(x, cell) {
-            cell = $(cell)
-            cell.removeClass();
-            cell.text('');
-            cell.addClass('cell');
-            var value = that.board[y][x];
-            if (value) {
-                cell.addClass('val-' + value);
-                cell.text(value);
-            }
-        });
-    });
-};
-
-
-
-
-
+// Display in the console
 BingoGame.prototype.displayInConsole = function () {
 
     console.log("player1");
@@ -137,8 +122,6 @@ BingoGame.prototype.displayInConsole = function () {
     }
     console.log("default list");
     console.log(b._generateRandomList())
-
-
 };
 
 
