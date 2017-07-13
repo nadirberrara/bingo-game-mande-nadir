@@ -8,7 +8,7 @@ $('document').ready(function(){
     $('#commencer').click(function(){
         $('#howManyPlayers').css({'visibility' : 'visible', 'opacity' : '1'});
 
-        $('#onePlayer').click(function () {
+        $('#twoPlayers').click(function () {
             $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
 
             for (var x = 0; x < 5; x++) {
@@ -30,6 +30,16 @@ $('document').ready(function(){
         });
 
 
+        $(function() {
+            $("#ok2").click(function(oEvent){
+                var sPrenom = $("#prenom").val();
+                $('#m2').text(sPrenom);
+            });
+            $("#ok").click(function(oEvent){
+                var sNom = $("#nom").val();
+                $('#m1').text(sNom);
+            });
+        });
 
 
     });

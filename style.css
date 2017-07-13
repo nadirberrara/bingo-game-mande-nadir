@@ -3,12 +3,13 @@ body {
     background-color: grey;
     margin: 20px;
     padding: 50px;
-    padding-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
 #container-fluid {
-    padding-left: auto;
+    padding-left: 20px;
 }
 
 
@@ -37,6 +38,7 @@ td {
 h1{
     text-align: center;
     font-size: 80px;
+    margin-top: 1px;
 }
 
 
@@ -78,7 +80,22 @@ h3{
 }
 
 #nextNumber {
-display: flex;
 }
 
 
+.identity {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#m1 {
+    font-size: 30px;
+}
+
+#m2 {
+    font-size: 30px;
+}
+
+input {
+    color: black;
+}

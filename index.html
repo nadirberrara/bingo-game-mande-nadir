@@ -21,18 +21,32 @@
 
 
     <div class="row" id="commencer">
-        <button type="btn-group  btn-group-justified button" class="btn btn-default btn-lg">START NEW GAME</button>
+        <button type="btn-group  btn-group-justified button" class="btn btn-default btn-lg">NEW GAME</button>
     </div>
 
     <div id="howManyPlayers">
-        <button id="onePlayer" type="button" class="btn btn-default btn-lg">1 Player</button>
+        <button id="onePlayer" type="button" class="line btn btn-default btn-lg">1 Player</button>
         <button id="twoPlayers" type="button" class="btn btn-default btn-lg">2 Players</button>
     </div>
 
     <div id="myGame">
 
         <div class="col-sm-6 col-md-3">
-            <h2>Player 1</h2>
+
+            <h3>P1 ENTER NAME</h3>
+
+
+            <table class="identity">
+                <tr>
+                    <th>
+                        <input type="text" name="nom" value="" size="25" id="nom" /><input type="submit" value="ok" id="ok" /></th>
+                </tr>
+                <tr>
+                    <td id="m1"></td>
+                </tr>
+            </table>
+
+
             <table class="player1">
                 <tr class="row">
                     <th>B</th>
@@ -77,10 +91,38 @@
                     <td class="cell cell-4-3">e</td>
                 </tr>
             </table>
+
         </div>
 
+
+
         <div class="player2 col-sm-6 col-md-3">
-            <h2>Player 2</h2>
+
+
+
+
+
+            <h3>P2 ENTER NAME</h3>
+
+
+
+
+            <table class="identity">
+                <tr>
+                    <th>
+                        <input type="text" name="prenom" value="" size="25" id="prenom" /><input type="submit" value="ok" id="ok2" /></th>
+                </tr>
+                <tr>
+                    <td id="m2"></td>
+                </tr>
+            </table>
+
+
+
+
+
+
+
             <table id="tableGrid" class="player2">
                 <tr class="row">
                     <th>B</th>
@@ -125,14 +167,16 @@
                     <td class="cell cell-4-4">e</td>
                 </tr>
             </table>
+
         </div>
+
 
         <div class="clear-fix"></div>
 
         <div class="tableList">
 
             <h2>THE LIST</h2>
-            <table class="theList">
+            <table class="theList col-sm-6 col-md-1">
                 <tr class="row">
                     <th class="cell">B</th>
                     <th class="cell">I</th>
@@ -259,17 +303,18 @@
                     <th class="cell cell-7-9"></th>
                 </tr>
             </table>
-            <div class="clear-fix"></div>
 
 
+            <div id="nextNumber">
+                <button type="button" class="btn btn-default btn-lg">START</button>
+            </div>
             <div id="nextNumber">
                 <button type="button" class="btn btn-default btn-lg">Next Number</button>
             </div>
 
         </div>
+
     </div>
-
-
 
 </div>
 
