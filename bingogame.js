@@ -1,34 +1,43 @@
 
 
 
-
-
 $('document').ready(function(){
 
     $('#commencer').click(function(){
         $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
     });
 
-
-
-
 });
 
 
 
 function BingoGame () {
+    //player1
     this.board = [
         [null, null, null, null, null],
         [null, null, null, null, null],
         [null, null, null, null, null],
         [null, null, null, null, null],
-        [null, null, null, null, null],
+        [null, null, null, null, null]
     ];
+
+    //player2
+    this.board2 = [
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null],
+        [null, null, null, null, null]
+    ];
+
     this.list = [];
 
     this._generateTiles();
-//    this._generateList();
+    this._generateTiles2();
+ //   this._generateList();
+
 }
+
 
 
 
@@ -39,12 +48,12 @@ BingoGame.prototype._generateRandomList = function () {
         list.push(i);
     }
     return _.shuffle(list);
-}
+};
 
 
 
-// Generate every tiles in the board
-BingoGame.prototype._generateTiles = function () {
+// Generate the first player grid
+BingoGame.prototype._generateTiles2 = function () {
     var randomList = this._generateRandomList();
     var i = 0;
     for (var y = 0; y < this.board.length; y++ ) {
@@ -53,25 +62,28 @@ BingoGame.prototype._generateTiles = function () {
                 i++;
                 var tileValue = randomList[i];
                 this.board[y][x] = tileValue;
-            };
+            }
         }
     }
-}
+};
 
 
 
 
-// Generate a random list from 1 to 75
-/*
-BingoGame.prototype._generateList = function () {
-    for (var i = 0; i <= 75; i++ ) {
-            var list = Math.floor((Math.random() * 75) + 1);
-            this.list.push(list);
+// Generate the second player grid
+BingoGame.prototype._generateTiles = function () {
+    var randomList = this._generateRandomList();
+    var i = 0;
+    for (var y = 0; y < this.board2.length; y++ ) {
+        for (var x = 0; x < this.board2[y].length; x++) {
+            if (y !== 2 || x !== 2) {
+                i++;
+                var tileValue = randomList[i];
+                this.board2[y][x] = tileValue;
+            }
+        }
     }
 };
-*/
-
-
 
 
 BingoGame.prototype._getAvailablePosition = function () {
@@ -106,15 +118,27 @@ BingoGame.prototype._renderBoard = function () {
     });
 };
 
+
+
+
+
 BingoGame.prototype.displayInConsole = function () {
+
+    console.log("player1");
     for (var y = 0; y < this.board.length; y++ ) {
         //console.log(this.board[y][0], this.board[y][1], this.board[y][2], this.board[y][3], this.board[y][4]);
         console.log(this.board[y]);
-    };
- /*   for (var i = 0; i < this.list.length; i++){
-        console.log(this.list[i]);
     }
-  */
+
+    console.log("player2");
+    for (var y = 0; y < this.board2.length; y++ ) {
+        //console.log(this.board[y][0], this.board[y][1], this.board[y][2], this.board[y][3], this.board[y][4]);
+        console.log(this.board2[y]);
+    }
+    console.log("default list");
+    console.log(b._generateRandomList())
+
+
 };
 
 
