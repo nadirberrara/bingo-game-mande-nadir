@@ -6,22 +6,36 @@ $('document').ready(function(){
     var i = 0;
 
     $('#commencer').click(function(){
-        $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
-        for (var x = 0; x < 5; x++) {
-            for (var y= 0; y < 5; y++) {
+        $('#howManyPlayers').css({'visibility' : 'visible', 'opacity' : '1'});
+
+        $('#onePlayer').click(function () {
+            $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
+
+            for (var x = 0; x < 5; x++) {
+                for (var y= 0; y < 5; y++) {
+                    if (y !== 2 || x !== 2) {
+                        $('.player1 .cell-' + y + '-' + x).html(b.board[y][x]);}}}
+
+            for (var x = 0; x < 5; x++) {
                 if (y !== 2 || x !== 2) {
-                $('.player1 .cell-' + y + '-' + x).html(b.board[y][x]);}}}
-        for (var x = 0; x < 5; x++) {
-                if (y !== 2 || x !== 2) {
-            for (var y= 0; y < 5; y++) {
-                $('.player2 .cell-' + y + '-' + x).html(b.board2[y][x]);}}}
-        for (var x = 0; x < 10; x++) {
-            for (var y = 0; y < 10; y++) {
-                $('.theList .cell-' + y + '-' + x).html(randomList[i]);
-                i++;
+                    for (var y= 0; y < 5; y++) {
+                        $('.player2 .cell-' + y + '-' + x).html(b.board2[y][x]);}}}
+
+            for (var x = 0; x < 10; x++) {
+                for (var y = 0; y < 10; y++) {
+                    $('.theList .cell-' + y + '-' + x).html(randomList[i]);
+                    i++;
+                }
             }
-        }
+        });
+
+
+
+
     });
+
+
+
 
 
 

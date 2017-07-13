@@ -6,6 +6,12 @@ body {
     padding-top: 0;
 }
 
+
+#container-fluid {
+    padding-left: auto;
+}
+
+
 th {
     border: 2px solid black;
     padding: 20px;
@@ -41,24 +47,38 @@ h3{
 
 
 .btn {
-    margin:20px;
+    margin-top:20px;
 }
 
 
 #myGame {
-    transition: 3s;
+    transition: 2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#howManyPlayers {
+    transition: 0.5s;
     visibility: hidden;
     opacity: 0;
 }
 
 
 #players {
-    transition: 1.5s;
+    transition: 2s;
     visibility: hidden;
     opacity: 0;
 }
+
+
 
 #commencer {
     display: block;
     margin : auto;
 }
+
+#nextNumber {
+display: flex;
+}
+
+
