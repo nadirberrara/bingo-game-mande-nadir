@@ -99,3 +99,13 @@ h3{
 input {
     color: black;
 }
+
+.tableList {
+display: none;
+}
+
+.start {
+    margin-bottom: 50px;
+}
+
+.cell:hover, .cell.green { background-color: #00cc00; }

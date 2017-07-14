@@ -5,6 +5,11 @@ $('document').ready(function(){
     var randomList = b._generateRandomList();
     var i = 0;
 
+    $('.start').click(function(){
+        $('.tableList').show();
+    });
+
+
     $('#commencer').click(function(){
         $('#howManyPlayers').css({'visibility' : 'visible', 'opacity' : '1'});
 
@@ -27,7 +32,14 @@ $('document').ready(function(){
                     i++;
                 }
             }
+
+            $(".cell").click(function () {
+                $(this).toggleClass("green");
+            });
+
         });
+
+
 
 
         $(function() {
@@ -40,7 +52,6 @@ $('document').ready(function(){
                 $('#m1').text(sNom);
             });
         });
-
 
     });
 
