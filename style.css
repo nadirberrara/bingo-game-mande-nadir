@@ -27,7 +27,7 @@ td {
 
 }
 
-.player2 {
+#player2,.player2class {
     clear: inherit;
 }
 
@@ -80,6 +80,7 @@ h3{
 }
 
 #nextNumber {
+    display: none;
 }
 
 
@@ -100,7 +101,7 @@ input {
     color: black;
 }
 
-.tableList {
+#tableList {
 display: none;
 }
 

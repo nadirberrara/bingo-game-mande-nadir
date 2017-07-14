@@ -1,12 +1,10 @@
 
-
-
 $('document').ready(function(){
     var randomList = b._generateRandomList();
     var i = 0;
 
     $('.start').click(function(){
-        $('.tableList').show();
+        $('#tableList, #nextNumber').show();
     });
 
 
@@ -16,31 +14,40 @@ $('document').ready(function(){
         $('#twoPlayers').click(function () {
             $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
 
-            for (var x = 0; x < 5; x++) {
-                for (var y= 0; y < 5; y++) {
-                    if (y !== 2 || x !== 2) {
-                        $('.player1 .cell-' + y + '-' + x).html(b.board[y][x]);}}}
+            $('#player1 .cell:not(.empty)').each(function (index) {
+                $(this).text(b.board[index])
+            });
 
-            for (var x = 0; x < 5; x++) {
-                if (y !== 2 || x !== 2) {
-                    for (var y= 0; y < 5; y++) {
-                        $('.player2 .cell-' + y + '-' + x).html(b.board2[y][x]);}}}
+            $('#player2 .cell:not(.empty)').each(function (index) {
+                $(this).text(b.board2[index])
+            });
 
-            for (var x = 0; x < 10; x++) {
-                for (var y = 0; y < 10; y++) {
-                    $('.theList .cell-' + y + '-' + x).html(randomList[i]);
-                    i++;
+         $('#nextNumber').click(function () {
+             var availableCells = $('#tableList .cell:not(.green)');
+             var index = Math.floor(Math.random() * availableCells.length);
+             var selectedElement = availableCells.eq(index);
+             selectedElement.toggleClass("green");
+         });
+
+
+            $(".player .cell").click(function () {
+                var existingNumbers = jQuery.map($('#tableList .green'), function (el, index) {
+                    return $(el).text();
+                });
+                console.log(existingNumbers);
+                console.log($(this).text());
+
+                if (jQuery.inArray($(this).text(), existingNumbers) !== -1){
+                    $(this).toggleClass("green");
+                    var numberSelected = $(this).parent().find('.green').length;
+                    if (numberSelected === 5) {
+                        alert('BINGO');
+                    }
                 }
-            }
 
-            $(".cell").click(function () {
-                $(this).toggleClass("green");
             });
 
         });
-
-
-
 
         $(function() {
             $("#ok2").click(function(oEvent){
@@ -68,31 +75,10 @@ $('document').ready(function(){
 
 function BingoGame () {
     //player1
-    this.board = [
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null]
-    ];
-
+    this.board = this._generateRandomList();
     //player2
-    this.board2 = [
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null],
-        [null, null, null, null, null]
-    ];
-
-    this._generateTiles();
-    this._generateTiles2();
-    this._generateRandomList();
-
+    this.board2 = this._generateRandomList();
 }
-
-
-
 
 // Generate a list from 1 to 75 in shuffle
 BingoGame.prototype._generateRandomList = function () {
@@ -102,44 +88,6 @@ BingoGame.prototype._generateRandomList = function () {
     }
     return _.shuffle(list);
 };
-
-
-
-// Generate the first player grid
-BingoGame.prototype._generateTiles2 = function () {
-    var randomList = this._generateRandomList();
-    var i = 0;
-    for (var y = 0; y < this.board.length; y++ ) {
-        for (var x = 0; x < this.board[y].length; x++) {
-            if (y !== 2 || x !== 2) {
-                i++;
-                var tileValue = randomList[i];
-                this.board[y][x] = tileValue;
-            }
-        }
-    }
-};
-
-
-
-
-// Generate the second player grid
-BingoGame.prototype._generateTiles = function () {
-    var randomList = this._generateRandomList();
-    var i = 0;
-    for (var y = 0; y < this.board2.length; y++ ) {
-        for (var x = 0; x < this.board2[y].length; x++) {
-            if (y !== 2 || x !== 2) {
-                i++;
-                var tileValue = randomList[i];
-                this.board2[y][x] = tileValue;
-            }
-        }
-    }
-};
-
-
-
 
 // Display in the console
 BingoGame.prototype.displayInConsole = function () {
@@ -156,7 +104,6 @@ BingoGame.prototype.displayInConsole = function () {
         console.log(this.board2[y]);
     }
     console.log("default list");
-    console.log(b._generateRandomList())
 };
 
 
