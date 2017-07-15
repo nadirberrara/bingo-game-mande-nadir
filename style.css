@@ -7,6 +7,16 @@ body {
     padding-bottom: 20px;
 }
 
+#titre {
+    background-color: white;
+    color: white;
+}
+
+#footer {
+    background-color: white;
+    color: white;
+}
+
 
 #container-fluid {
     padding-left: 20px;
@@ -110,3 +120,36 @@ display: none;
 }
 
 .cell:hover, .cell.green { background-color: #00cc00; }
+
+#winner {
+    position: absolute;
+    background-color: rgba(00, 99, 00, 0.8);
+    padding: 200px;
+    font-size: 30px;
+    border: 2px solid black;
+    margin-left: 50px;
+    margin-top: 80px;
+    visibility: hidden;
+}
+
+#endOfGame {
+    position: absolute;
+    background-color: rgba(00, 00, 00, 0.8);
+    padding: 288px;
+    font-size: 30px;
+    border: 2px solid black;
+    margin-left: 640px;
+    margin-top: -10px;
+    visibility: hidden;
+    background-image: url("rocky.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+
+
+}
+
+.copyrights {
+    background-color:white;
+    color: black;
+    flex-wrap: wrap;
+}

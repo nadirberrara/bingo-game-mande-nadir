@@ -22,6 +22,7 @@ $('document').ready(function(){
                 $(this).text(b.board2[index])
             });
 
+
          $('#nextNumber').click(function () {
              var availableCells = $('#tableList .cell:not(.green)');
              var index = Math.floor(Math.random() * availableCells.length);
@@ -41,7 +42,9 @@ $('document').ready(function(){
                     $(this).toggleClass("green");
                     var numberSelected = $(this).parent().find('.green').length;
                     if (numberSelected === 5) {
-                        alert('BINGO');
+                        //alert('BINGO');
+                        $('#winner').css({'visibility' : 'visible'});
+                        $('#endOfGame').css({'visibility' : 'visible'});
                     }
                 }
 
