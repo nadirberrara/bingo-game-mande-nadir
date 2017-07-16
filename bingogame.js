@@ -1,7 +1,11 @@
 
+
+
+
 $('document').ready(function(){
     var randomList = b._generateRandomList();
     var i = 0;
+
 
     $('.start').click(function(){
         $('#tableList, #nextNumber').show();
@@ -15,13 +19,12 @@ $('document').ready(function(){
             $('#myGame').css({'visibility' : 'visible', 'opacity' : '1'});
 
             $('#player1 .cell:not(.empty)').each(function (index) {
-                $(this).text(b.board[index])
+                $(this).text(b.board[index]);
             });
 
             $('#player2 .cell:not(.empty)').each(function (index) {
-                $(this).text(b.board2[index])
+                $(this).text(b.board2[index]);
             });
-
 
          $('#nextNumber').click(function () {
              var availableCells = $('#tableList .cell:not(.green)');
@@ -29,7 +32,6 @@ $('document').ready(function(){
              var selectedElement = availableCells.eq(index);
              selectedElement.toggleClass("green");
          });
-
 
             $(".player .cell").click(function () {
                 var existingNumbers = jQuery.map($('#tableList .green'), function (el, index) {
@@ -42,9 +44,7 @@ $('document').ready(function(){
                     $(this).toggleClass("green");
                     var numberSelected = $(this).parent().find('.green').length;
                     if (numberSelected === 5) {
-                        //alert('BINGO');
-                        $('#winner').css({'visibility' : 'visible'});
-                        $('#endOfGame').css({'visibility' : 'visible'});
+                        alert('BINGO ' + $("#prenom").val() + ' won');
                     }
                 }
 
@@ -64,11 +64,6 @@ $('document').ready(function(){
         });
 
     });
-
-
-
-
-
 
 
 
@@ -102,11 +97,9 @@ BingoGame.prototype.displayInConsole = function () {
     }
 
     console.log("player2");
-    for (var y = 0; y < this.board2.length; y++ ) {
+    for (var inc = 0; inc < this.board2.length; inc++ ) {
         //console.log(this.board[y][0], this.board[y][1], this.board[y][2], this.board[y][3], this.board[y][4]);
-        console.log(this.board2[y]);
+        console.log(this.board2[inc]);
     }
     console.log("default list");
 };
-
-
