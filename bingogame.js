@@ -7,7 +7,7 @@ $('document').ready(function(){
     var i = 0;
 
 
-<<<<<<< HEAD
+
     var backgroundMusic = new Howl({
         src: ['musique.mp3'],
         autoplay: true,
@@ -17,8 +17,7 @@ $('document').ready(function(){
 
 
 
-=======
->>>>>>> 95fe0064b77d6dde46d9bba208890e225b6d540a
+
     $('.start').click(function(){
         $('#tableList, #nextNumber').show();
     });
@@ -56,7 +55,7 @@ $('document').ready(function(){
                     $(this).toggleClass("green");
                     var numberSelected = $(this).parent().find('.green').length;
                     if (numberSelected === 5) {
-<<<<<<< HEAD
+
                         //alert('BINGO');
                         var applauseMusic = new Howl({
                             src: ['applause.mp3'],
@@ -70,9 +69,6 @@ $('document').ready(function(){
                         });
                         $('#winner').css({'visibility' : 'visible', 'opacity' : '1'});
                         $('#endOfGame').css({'visibility' : 'visible', 'opacity' : '1'});
-=======
-                        alert('BINGO ' + $("#prenom").val() + ' won');
->>>>>>> 95fe0064b77d6dde46d9bba208890e225b6d540a
                     }
                 }
 
@@ -93,9 +89,6 @@ $('document').ready(function(){
             });
         });
     });
-
-
-
 }); // fin du document ready
 
 
