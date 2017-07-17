@@ -9,7 +9,7 @@ $('document').ready(function(){
 
 
     var backgroundMusic = new Howl({
-        src: ['musique.mp3'],
+        src: ['elements/musique.mp3'],
         autoplay: true,
         loop: true,
         volume: 0.5
@@ -58,12 +58,12 @@ $('document').ready(function(){
 
                         //alert('BINGO');
                         var applauseMusic = new Howl({
-                            src: ['applause.mp3'],
+                            src: ['elements/applause.mp3'],
                             autoplay: true,
                             volume: 0.5
                         });
                         var bingoSound = new Howl({
-                            src: ['BINGO.mp3'],
+                            src: ['elements/BINGO.mp3'],
                             autoplay: true,
                             volume: 1
                         });
