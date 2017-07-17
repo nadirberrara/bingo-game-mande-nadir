@@ -2,6 +2,25 @@
 $('document').ready(function(){
     var randomList = b._generateRandomList();
     var i = 0;
+    var secondes = 10;
+
+
+
+    $('#startCounter').click(function() {
+        var i = 10;
+        var chrono = setInterval(function() {
+            if (secondes === 0){
+                clearInterval(chrono);
+                $('#turn').html('P2 first')
+            }
+            else {
+                secondes--;
+                $('.chrono').html(secondes);
+            }
+        }, 1000);
+    });
+
+
 
     $('.start').click(function(){
         $('#tableList, #nextNumber').show();
