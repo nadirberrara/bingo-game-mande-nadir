@@ -2,22 +2,13 @@
 $('document').ready(function(){
     var randomList = b._generateRandomList();
     var i = 0;
-    var secondes = 10;
 
 
-
-    $('#startCounter').click(function() {
-        var i = 10;
-        var chrono = setInterval(function() {
-            if (secondes === 0){
-                clearInterval(chrono);
-                $('#turn').html('P2 first')
-            }
-            else {
-                secondes--;
-                $('.chrono').html(secondes);
-            }
-        }, 1000);
+    var backgroundMusic = new Howl({
+        src: ['musique.mp3'],
+        autoplay: true,
+        loop: true,
+        volume: 0.5
     });
 
 
@@ -62,8 +53,18 @@ $('document').ready(function(){
                     var numberSelected = $(this).parent().find('.green').length;
                     if (numberSelected === 5) {
                         //alert('BINGO');
-                        $('#winner').css({'visibility' : 'visible'});
-                        $('#endOfGame').css({'visibility' : 'visible'});
+                        var applauseMusic = new Howl({
+                            src: ['applause.mp3'],
+                            autoplay: true,
+                            volume: 0.5
+                        });
+                        var bingoSound = new Howl({
+                            src: ['BINGO.mp3'],
+                            autoplay: true,
+                            volume: 1
+                        });
+                        $('#winner').css({'visibility' : 'visible', 'opacity' : '1'});
+                        $('#endOfGame').css({'visibility' : 'visible', 'opacity' : '1'});
                     }
                 }
 
@@ -75,13 +76,14 @@ $('document').ready(function(){
             $("#ok2").click(function(oEvent){
                 var sPrenom = $("#prenom").val();
                 $('#m2').text(sPrenom);
+                $('#player2name').css({'visibility':'hidden','opacity':'0'});
             });
             $("#ok").click(function(oEvent){
                 var sNom = $("#nom").val();
                 $('#m1').text(sNom);
+                $('#player1name').css({'visibility':'hidden','opacity':'0'});
             });
         });
-
     });
 
 

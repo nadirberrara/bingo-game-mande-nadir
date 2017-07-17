@@ -13,8 +13,9 @@
 
 <body>
 
-    <h3>The Amazing</h3>
-    <h1>BINGO</h1>
+<div id="bg-img">
+    <h3>The Amazing BINGO</h3>
+</div>
 
     <div id="titre" > a</div>
 
@@ -40,7 +41,7 @@
 
 
             <table class="identity">
-                <tr>
+                <tr id="player1name">
                     <th>
                         <input type="text" name="nom" value="" size="25" id="nom" /><input type="submit" value="ok" id="ok" />
                     </th>
@@ -110,16 +111,11 @@
         <div class="player2class col-sm-6 col-md-3">
 
 
-
-
-
             <h3>P2 ENTER NAME</h3>
 
 
-
-
             <table class="identity">
-                <tr>
+                <tr id="player2name">
                     <th>
                         <input type="text" name="prenom" value="" size="25" id="prenom" /><input type="submit" value="ok" id="ok2" /></th>
                 </tr>
@@ -328,7 +324,7 @@
 
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript" src="bingogame.js"></script>

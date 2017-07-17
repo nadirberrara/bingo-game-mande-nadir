@@ -5,7 +5,10 @@ body {
     padding: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-image: url("bingo70s.jpg");
+    background-image-repeat: no-repeat;
 }
+
 
 
 #titre {
@@ -113,7 +116,8 @@ input {
 }
 
 #tableList {
-display: none;
+    display: none;
+
 }
 
 .start {
@@ -133,6 +137,9 @@ display: none;
     visibility: hidden;
 }
 
+
+
+
 #endOfGame {
     position: absolute;
     background-color: rgba(00, 00, 00, 0.8);
@@ -142,9 +149,17 @@ display: none;
     margin-left: 640px;
     margin-top: -10px;
     visibility: hidden;
-    background-image: url("rocky.jpg");
+    background-image: url("https://media.giphy.com/media/iHgznkhwC6XYs/giphy-downsized.gif");
     background-repeat:no-repeat;
     background-position:center center;
+    background-size: 130%;
+}
+
+#bravo {
+    position: absolute;
+    font-size: 50px;
+    margin-left: 750px;
+
 
 
 }
@@ -153,4 +168,17 @@ display: none;
     background-color:white;
     color: black;
     flex-wrap: wrap;
+}
+
+
+#player1name {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+#player2name {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
 }
